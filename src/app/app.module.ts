@@ -1,10 +1,9 @@
-import { AuthFormModule } from './auth-form/auth-form.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StockInventoryModule } from './stock-inventory/stock-inventory.module';
+import { StockInventoryComponent } from './stock-inventory/containers/stock-inventory/stock-inventory.component';
 
 @NgModule({
   declarations: [
@@ -12,11 +11,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    AuthFormModule
+    StockInventoryModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+
+  ],
+  bootstrap: [
+    AppComponent]
 })
 export class AppModule { }
