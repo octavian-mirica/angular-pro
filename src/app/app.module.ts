@@ -1,26 +1,31 @@
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router';
+import { Store } from '../store';
+
+// feature modules
+
+// containers
+import { AppComponent } from './containers/app/app.component';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+// components
 
-import { Store } from './store';
-import { SongsModule } from './songs/songs.module';
+// routes
+export const ROUTES: Routes = [];
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(ROUTES)
+  ],
   declarations: [
     AppComponent
   ],
   providers: [
     Store
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    SongsModule
-  ],
   bootstrap: [
     AppComponent
   ]
 })
-export class AppModule { }
+export class AppModule {}
