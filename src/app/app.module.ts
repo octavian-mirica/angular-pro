@@ -1,22 +1,26 @@
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { StockInventoryModule } from './stock-inventory/stock-inventory.module';
-import { StockInventoryComponent } from './stock-inventory/containers/stock-inventory/stock-inventory.component';
+
+import { Store } from './store';
+import { SongsModule } from './songs/songs.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
+  providers: [
+    Store
+  ],
   imports: [
     BrowserModule,
-    StockInventoryModule
-  ],
-  providers: [
-
+    HttpClientModule,
+    SongsModule
   ],
   bootstrap: [
-    AppComponent]
+    AppComponent
+  ]
 })
 export class AppModule { }
