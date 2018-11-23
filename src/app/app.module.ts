@@ -1,6 +1,9 @@
+import { AppNavComponent } from './components/app-nav/app-nav.component';
+import { AppHeaderComponent } from './components/app-header/app-header.component';
+import { AuthModule } from './../auth/auth.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-import { Store } from '../store';
+import { Store } from 'store';
 
 // feature modules
 
@@ -16,10 +19,13 @@ export const ROUTES: Routes = [];
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    AuthModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    AppHeaderComponent,
+    AppNavComponent
   ],
   providers: [
     Store

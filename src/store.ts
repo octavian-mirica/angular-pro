@@ -1,11 +1,15 @@
 import { distinctUntilChanged, pluck } from 'rxjs/operators';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { User } from './auth/shared/services/auth/auth.service';
 
 export interface State {
-  [key: string]: any
+  user: User;
+  [key: string]: any;
 }
 
-const state: State = {};
+const state: State = {
+  user: undefined
+};
 
 export class Store {
 
